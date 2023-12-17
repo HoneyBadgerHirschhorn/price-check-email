@@ -7,9 +7,9 @@
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="show_sql">true</property>
-        <property name="hibernate.connection.url">jdbc:mysql://database-3.cqqfats78sl1.us-east-1.rds.amazonaws.com:3306/Crypto_Stuff</property>
-        <property name="hibernate.connection.username">admin</property>
-        <property name="hibernate.connection.password">adminadmin</property>
+        <property name="hibernate.connection.url">mysql_Connection_url</property>
+        <property name="hibernate.connection.username">username</property>
+        <property name="hibernate.connection.password">password</property>
         <property name="connection.pool.size">3</property>
         <mapping class="helloworld.HibernateCoin"/>
 
