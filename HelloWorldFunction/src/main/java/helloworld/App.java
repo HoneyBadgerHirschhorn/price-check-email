@@ -63,7 +63,7 @@ public class App implements RequestHandler<Object, String> {
     public void getLength(){
         String userName = "admin";
         String passWord = "adminadmin";
-        String sqlUrl = "jdbc:mysql://database-3.cqqfats78sl1.us-east-1.rds.amazonaws.com:3306/Crypto_Stuff";
+        String sqlUrl = "mysql_Connection_url";
         String query = "Select COUNT(*) FROM currency";
 
         try{
@@ -80,9 +80,10 @@ public class App implements RequestHandler<Object, String> {
     }
     public void sendEmail(String body){
         String host="smtp.gmail.com";
-        final String user="DhirschhJKD@gmail.com";
-        final String password="jsxx tber ztdh etet";
-        String to="DenisHirschh@hotmail.com";
+        final String user="yourEmailAddress";
+        //https://support.google.com/accounts/answer/185833?hl=en    for tutorial on how to do this
+        final String password="Gmail-app-specific-password";
+        String to="targetEmailAddress";
 
         //Get the session object
         Properties props = new Properties();
