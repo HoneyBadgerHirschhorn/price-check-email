@@ -61,8 +61,8 @@ public class App implements RequestHandler<Object, String> {
     }
 
     public void getLength(){
-        String userName = "admin";
-        String passWord = "adminadmin";
+        String userName = "*****";
+        String passWord = "**********";
         String sqlUrl = "mysql_Connection_url";
         String query = "Select COUNT(*) FROM currency";
 
