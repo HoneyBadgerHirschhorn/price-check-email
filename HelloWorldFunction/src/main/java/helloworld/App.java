@@ -12,6 +12,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Properties;
 
+import javax.swing.table.*;
+
 /**
  * Handler for requests to Lambda function.
  */
@@ -19,6 +21,7 @@ public class App implements RequestHandler<Object, String> {
     public static int length;
     public String handleRequest(Object thing, Context context) {
 
+        //hibernate connection
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         org.hibernate.Session sss = sessionFactory.openSession();
 
@@ -35,15 +38,17 @@ public class App implements RequestHandler<Object, String> {
 
         //iterates through SQL table to compare prices in DB with threshold values stored in arraylist
         for (int i = 0 ; i <length; i ++){
+
             HibernateCoin coin = sss.get(HibernateCoin.class, i+1);
             coins.add(coin);
             double price = Double.parseDouble(String.valueOf(coins.get(i).getPrice()));
+
             if (price > targetPrices.get(i)){
+
                 ct ++;
                 String name = coins.get(i).getName();
                 String message = ("The price for "+name+" is now "+price+System.lineSeparator()+
-                       "This is above the notification threshold of "+targetPrices.get(i)+System.lineSeparator()
-
+                "This is above the notification threshold of "+targetPrices.get(i)+System.lineSeparator()
                 +System.lineSeparator());
                 emailBody.add(message);
             }
@@ -61,9 +66,9 @@ public class App implements RequestHandler<Object, String> {
     }
 
     public void getLength(){
-        String userName = "admin";
-        String passWord = "adminadmin";
-        String sqlUrl = "mysql_Connection_url";
+        String userName = "***";
+        String passWord = "***";
+        String sqlUrl = "jdbc:mysql://database-3.***.us-east-1.rds.amazonaws.com:3306/Crypto_Stuff";
         String query = "Select COUNT(*) FROM currency";
 
         try{
@@ -80,10 +85,11 @@ public class App implements RequestHandler<Object, String> {
     }
     public void sendEmail(String body){
         String host="smtp.gmail.com";
-        final String user="yourEmailAddress";
-        //https://support.google.com/accounts/answer/185833?hl=en    for tutorial on how to do this
-        final String password="Gmail-app-specific-password";
-        String to="targetEmailAddress";
+        final String user="***@gmail.com";  //gmail address
+//      this comes from gmail setttings
+        final String password="***";
+
+        String to="***.com"; //hotmail address
 
         //Get the session object
         Properties props = new Properties();

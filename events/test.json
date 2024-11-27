@@ -1,0 +1,21 @@
+{
+  "GuitarBrands" : [
+                   {"gibson": {
+                     "Type" : {"Acoustic" :  ["model 1", "Model 2", "Model 3"],
+                               "Electric" : ["model 4", "Model 5", "Model 6"]
+                     }
+                   },
+                    "Taylor" : {
+                      "Type" : {"Acoustic" :  ["model 1", "Model 2", "Model 3"],
+                        "Electric" : ["model 4", "Model 5", "Model 6"]
+                      }
+                    },
+                    "BreedLove ": {
+                      "Type" : {"Acoustic" :  ["model 1", "Model 2", "Model 3"],
+                        "Electric" : ["model 4", "Model 5", "Model 6"]
+                      }
+                    }
+                   }
+
+  ]
+}
