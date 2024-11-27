@@ -68,7 +68,7 @@ public class App implements RequestHandler<Object, String> {
     public void getLength(){
         String userName = "***";
         String passWord = "***";
-        String sqlUrl = "jdbc:mysql://database-3.***.us-east-1.rds.amazonaws.com:3306/Crypto_Stuff";
+        String sqlUrl = "jdbc:mysql://database-3.***.us-east-1.rds.amazonaws.com:3306/***";
         String query = "Select COUNT(*) FROM currency";
 
         try{
